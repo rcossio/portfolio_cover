@@ -1,0 +1,13 @@
+{
+  "name": "portfolio_cover",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "bash build.sh",
+    "start": "bash build.sh && http-server dist"
+  },
+  "author": "Rodrigo Cossio-Pérez",
+  "license": "ISC"
+}
