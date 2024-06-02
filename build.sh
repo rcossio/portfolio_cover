@@ -41,6 +41,12 @@ done
 
 # Minify and convert images to WebP format
 for file in $SRC_IMAGES/*; do
+  # if svg just copy it
+  if [[ $file == *".svg" ]]; then
+    cp $file $DIST_IMAGES/$(basename $file)
+    continue
+  fi
+
   # Resize images if needed (optional, comment out if not needed)
   convert $file -resize 400x400 $DIST_IMAGES/resized_$(basename $file)
 
