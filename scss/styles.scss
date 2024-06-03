@@ -1,4 +1,4 @@
-// Variables de diseño
+// Design variables
 $color-primary-light: #4A82D6;
 $color-primary: #59729A;
 $color-primary-dark: #50545A;
@@ -21,36 +21,40 @@ $size-3: 100px;
 $size-4: 200px;
 $size-5: 400px;
 $size-6: 800px;
-
+$size-7: 1600px;
 
 $font-family: 'Montserrat', sans-serif;
 $font-size-small: 24px;
 $font-size-medium: 32px;
 $font-size-large: 44px;
 
-// Estilos generales
-body {
-    font-family: $font-family;
+* {
     margin: 0;
     padding: 0;
+    font-size: $font-size-medium;
+}
+
+body {
+    font-family: $font-family;
     color: $color-primary-dark;
     background-color: $color-gray-light;
 }
+
+
 .site {
     position: relative;
 
-    // Clases BEM para cada sección
     .site__background-decorator {
+        //Fixed background image, prevents scrolling
         background-image: url('../img/background-decorator.svg');
         background-attachment: fixed;
         background-size: cover; 
         background-repeat: no-repeat; 
         position: absolute; 
-        margin:0;
         top: -$size-3;
         left: 0;
         width: 100%;
-        height: 100%; 
+        height: 100%;
         z-index: -1;
     }
 
@@ -63,10 +67,11 @@ body {
             left: 0;
             z-index: 1;
             height: $size-4;
-            width: calc(100% - #{$size-5} - #{$size-2} ); //TOFIX
+            width: calc(100% - #{$size-5} - #{$size-2} );
+            max-width: calc(#{$size-6} + #{$size-5} - #{$size-2} );
+            min-width: calc(#{$size-6} + #{$size-3} - #{$size-2} );
             background-color: $color-secondary-dark;
             border-radius: 0 $size-3 $size-3 0;
-            margin:0;
         }
 
         .header__main-banner {
@@ -75,15 +80,18 @@ body {
             display: flex;
             align-items: center;
             height: $size-4;
-            width: calc(100% - #{$size-5}); //TOFIX
+            width: calc(100% - #{$size-5});
+            max-width: calc(#{$size-6} + #{$size-5});
+            min-width: calc(#{$size-6} + #{$size-3});
             background-color: $color-primary;
             border-radius: 0 $size-3 $size-3 0;
-            margin: $size-3 $size-5 $size-3 0;
+            margin: $size-3 auto $size-3 0;
             box-shadow: 6px 6px 12px 0px $color-shadow;
 
             .main-banner__content {
                 display: flex;
                 padding-left: calc(#{$size-4} + 4 * #{$size-1} );
+                margin-right: $size-1;
 
                 .main-banner__image {
                     position: absolute;
@@ -96,37 +104,43 @@ body {
                 }
 
                 .main-banner__text {
+                    
                     .main-banner__title {
                         font-size: $font-size-large;
                         color: $color-gray-light;
                         font-weight: normal;
-                        margin: 0;
                     }
 
                     .main-banner__subtitle {
-                        font-size: $font-size-medium;
                         color: $color-secondary-light;
                         font-weight: normal;
-                        margin: 0;
                     }
                 }
             }
+
         }
     }
 
     .site__carousel-section {
         display: flex;
         justify-content: space-between;
-        margin: $size-2 $size-3;
+        margin: $size-2 auto;
+        padding: 0 $size-3;
+        max-width: $size-7;
+
+        @media (max-width: 1200px) {
+            padding: 0 $size-2;
+        }
 
         .carousel-section__text {
             flex: 1;
-            margin: 0 $size-2 0 0;
+            max-width: calc(#{$size-6} + #{$size-4});
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
 
             .carousel-section__title {
-                font-size: $font-size-medium;
                 color: $color-gray-dark;
-                margin: 0;
             }
 
             .carousel-section__description {
@@ -140,12 +154,11 @@ body {
             flex-shrink: 0;
             position: relative;
             flex-direction: column;
-            width: calc( #{$size-5} + 0.5 * #{$size-4} );
+            width: calc( #{$size-5} + #{$size-2} );
             height: calc( #{$size-5} + #{$size-3} );
 
             .carousel-section__circle {
                 border-radius: 50%;
-                margin: 0;
                 box-shadow: 6px 6px 12px 0px $color-shadow;
 
                 &--small {
@@ -198,36 +211,47 @@ body {
     .site__projects-banner {
         text-align: center;
         background-color: $color-primary;
-        margin: 0;
         padding: $size-2;
 
         .projects-banner__title {
             display: block;
             font-size: $font-size-large;
             margin: 0 0 $size-2 0;
-            padding: 0;
             color: $color-gray-light;
         }
 
         .projects-banner__cards {
             display: flex;
             justify-content: space-between;
-            margin: 0;
-            padding: 0;
+            max-width: $size-7;
+            margin: 0 auto;
+
+            @media (max-width: 1200px) {
+                justify-content: center;
+            }
 
             .projects-banner__card {
-                width: 45%;
+                //flex: 1;
                 text-align: left;
                 vertical-align: top;
-                margin: 0;
                 padding: $size-1;
                 border-radius: $size-1;
                 display: flex;
                 justify-content: space-between;
+                align-items: center;
                 box-shadow: 6px 6px 12px 0px $color-shadow;
+
+                @media (max-width: 1200px) {
+                    flex-direction: column-reverse;
+                    justify-content: flex-start;
+                    text-align: center;
+                    width: calc( 1.176 * #{$size-4} );
+                    
+                }
             
                 &--left {
                     background-color: $color-primary-light;
+                    margin-right: $size-2;
                 }
             
                 &--right {
@@ -235,11 +259,13 @@ body {
                 }
     
                 .card__text-content {
-                    margin: 0 $size-1;
-                    padding: 0;
+                    margin: $size-0;
+
+                    @media (max-width: 1200px) {
+                        margin: $size-0 0;
+                    }
 
                     .card__title {
-                        font-size: $font-size-medium;
                         font-weight: normal;
                         color: $color-gray-light;
     
@@ -260,7 +286,9 @@ body {
     
                 .card__image {
                     height: $size-4;
-                    border-radius: $size-0;                }
+                    width: calc( 1.176 * #{$size-4} );
+                    border-radius: $size-0;
+                }
                 
             }
         }
@@ -268,9 +296,7 @@ body {
 
     .site__video-section {
         text-align: center;
-        padding: $size-3;
-        background-color: none;
-        padding: $size-3;
+        padding: $size-3 0;
 
         .video-section__title {
             font-size: $font-size-large;
@@ -283,6 +309,10 @@ body {
             display: flex;
             justify-content: center;
             align-items: center;
+
+            @media (max-width: 992px) {
+                flex-direction: column;
+            }
 
             .video-section__player {
                 position: relative;
@@ -312,8 +342,14 @@ body {
                 display: flex;
                 flex-direction: column;
                 justify-content: center;
-                padding: 0;
                 margin: 0 $size-2;
+
+                @media (max-width: 992px) {
+                    flex-direction: row-reverse;
+                    width: calc(16 * #{$size-5} / 9); //equals iframe
+                    justify-content: flex-start;
+                    margin: 0 auto;
+                }
             
                 .video-section__button {
                     position: relative; 
@@ -327,6 +363,10 @@ body {
                     background-size: cover; 
                     background-position: center; 
                     overflow: hidden; 
+
+                    @media (max-width: 992px) {
+                        margin: 0 $size-0;
+                    }
             
                     &--en {
                         background-image: url('../img/english.webp');
