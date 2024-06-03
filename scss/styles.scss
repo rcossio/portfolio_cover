@@ -72,6 +72,11 @@ body {
             min-width: calc(#{$size-6} + #{$size-3} - #{$size-2} );
             background-color: $color-secondary-dark;
             border-radius: 0 $size-3 $size-3 0;
+
+            @media (max-width: 992px) {
+                width: calc(100% - #{$size-3} - #{$size-2});
+                min-width: calc(#{$size-5} + #{$size-4} - #{$size-2});
+            }
         }
 
         .header__main-banner {
@@ -88,10 +93,19 @@ body {
             margin: $size-3 auto $size-3 0;
             box-shadow: 6px 6px 12px 0px $color-shadow;
 
+            @media (max-width: 992px) {
+                width: calc(100% - #{$size-3});
+                min-width: calc(#{$size-5} + #{$size-4});
+            }
+
             .main-banner__content {
                 display: flex;
                 padding-left: calc(#{$size-4} + 4 * #{$size-1} );
                 margin-right: $size-1;
+
+                @media (max-width: 992px) {
+                    padding-left: calc(#{$size-4} + 5 * #{$size-0} );
+                }
 
                 .main-banner__image {
                     position: absolute;
@@ -101,6 +115,14 @@ body {
                     margin-right: $size-2;
                     height: calc(#{$size-4} + 2 * #{$size-1});
                     width: calc(#{$size-4} + 2 * #{$size-1});
+
+                    @media (max-width: 992px) {
+                        top: -$size-0;
+                        left: $size-0;
+                        height: calc(#{$size-4} + 2 * #{$size-0});
+                        width: calc(#{$size-4} + 2 * #{$size-0});
+                        margin-right: $size-1;
+                    }
                 }
 
                 .main-banner__text {
@@ -109,6 +131,11 @@ body {
                         font-size: $font-size-large;
                         color: $color-gray-light;
                         font-weight: normal;
+
+                        @media (max-width: 992px) {
+                            font-size: $font-size-medium;
+                            font-weight: bold;
+                        }
                     }
 
                     .main-banner__subtitle {
@@ -132,12 +159,21 @@ body {
             padding: 0 $size-2;
         }
 
+        @media (max-width: 992px) {
+            flex-direction: column;
+            align-items: center;
+        }
+
         .carousel-section__text {
             flex: 1;
             max-width: calc(#{$size-6} + #{$size-4});
             display: flex;
             flex-direction: column;
             justify-content: center;
+
+            @media (max-width: 992px) {
+                margin-bottom: $size-2;
+            }
 
             .carousel-section__title {
                 color: $color-gray-dark;
@@ -157,6 +193,12 @@ body {
             width: calc( #{$size-5} + #{$size-2} );
             height: calc( #{$size-5} + #{$size-3} );
 
+            @media (max-width: 992px) {
+                width: calc( #{$size-5} + #{$size-3} );
+                height: calc( #{$size-5} + #{$size-2} );
+                margin-bottom: $size-2;
+            }
+
             .carousel-section__circle {
                 border-radius: 50%;
                 box-shadow: 6px 6px 12px 0px $color-shadow;
@@ -164,6 +206,7 @@ body {
                 &--small {
                     position: absolute;
                     left: calc( #{$size-3} + #{$size-1} );
+                    top: 0;
                     width: $size-3;
                     height: $size-3;
                     font-size: $font-size-small;
@@ -173,11 +216,17 @@ body {
                     justify-content: flex-end;
                     color: $color-gray-light;
                     padding: $size-0;
+
+                    @media (max-width: 992px) {
+                        top: calc( #{$size-3} + #{$size-1} );
+                        left: 0;
+                    }
                 }
 
                 &--medium {
                     position: absolute;
                     top: $size-2;
+                    left: 0;
                     width: $size-4;
                     height: $size-4;
                     font-size: $font-size-small;
@@ -188,6 +237,10 @@ body {
                     color: $color-gray-light;
                     padding: $size-0;
 
+                    @media (max-width: 992px) {
+                        top: 0;
+                        left: $size-2;
+                    }
                 }
 
                 &--large {
@@ -197,6 +250,10 @@ body {
                     width: $size-5;
                     height: $size-5;
 
+                    @media (max-width: 992px) {
+                        top: 0;
+                        left: $size-3;
+                    }
 
                     img {
                         width: 100%;
@@ -230,6 +287,12 @@ body {
                 justify-content: center;
             }
 
+            @media (max-width: 768px) {
+                flex-direction: column;
+                align-items: center;
+                justify-content: flex-start;
+            }
+
             .projects-banner__card {
                 //flex: 1;
                 text-align: left;
@@ -241,7 +304,7 @@ body {
                 align-items: center;
                 box-shadow: 6px 6px 12px 0px $color-shadow;
 
-                @media (max-width: 1200px) {
+                @media (min-width: 768px) and (max-width: 1200px) {
                     flex-direction: column-reverse;
                     justify-content: flex-start;
                     text-align: center;
@@ -319,7 +382,12 @@ body {
 
                 iframe {
                     height: $size-5;
-                    width: calc(16 * #{$size-5} / 9)
+                    width: calc(16 * #{$size-5} / 9);
+
+                    @media (max-width: 768px) {
+                        height: calc( #{$size-4} + #{$size-3});
+                        width: calc( 16 * ( #{$size-4} + #{$size-3} ) / 9);
+                    }
                 }
 
                 .video-section__play-button {
@@ -350,6 +418,10 @@ body {
                     justify-content: flex-start;
                     margin: 0 auto;
                 }
+
+                @media (max-width: 768px) {
+                    width: calc( 16 * ( #{$size-4} + #{$size-3} ) / 9);; //equals iframe
+                }
             
                 .video-section__button {
                     position: relative; 
@@ -366,6 +438,11 @@ body {
 
                     @media (max-width: 992px) {
                         margin: 0 $size-0;
+                    }
+
+                    @media (max-width: 768px) {
+                        width: $size-2;
+                        height: $size-2;
                     }
             
                     &--en {
