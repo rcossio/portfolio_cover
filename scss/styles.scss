@@ -14,25 +14,29 @@ $color-gray-dark: #000000;
 $color-dark-overlay: rgba(0, 0, 0, 0.3);
 $color-shadow: rgba(0, 0, 0, 0.5);
 
-$size-0: 12px;
-$size-1: 25px;
-$size-2: 50px;
-$size-3: 100px;
-$size-4: 200px;
-$size-5: 400px;
-$size-6: 800px;
-$size-7: 1600px;
+$size-mi: 6px;
+$size-xs: 12px;
+$size-sm: 25px;
+$size-md: 50px;
+$size-lg: 100px;
+$size-xl: 200px;
+$size-xxl: 400px;
+$size-hg: 800px;
+$size-gt: 1600px;
 
 $font-family: 'Montserrat', sans-serif;
-$font-size-smaller: 20px;
-$font-size-small: 24px;
-$font-size-medium: 32px;
-$font-size-large: 44px;
+
+$font-size-xxs: 16px;
+$font-size-xs: 18px;
+$font-size-sm: 20px;
+$font-size-md: 24px;
+$font-size-lg: 32px;
+$font-size-xl: 44px;
 
 * {
     margin: 0;
     padding: 0;
-    font-size: $font-size-medium;
+    font-size: $font-size-lg;
     font-weight: normal;
     font-family: $font-family;
 }
@@ -53,7 +57,7 @@ body {
         background-size: cover; 
         background-repeat: no-repeat; 
         position: absolute; 
-        top: -$size-3;
+        top: -$size-lg;
         left: 0;
         width: 100%;
         height: 100%;
@@ -65,37 +69,43 @@ body {
 
         .header__support-element {
             position: absolute;
-            top: -$size-2;
+            top: -$size-md;
             left: 0;
             z-index: 1;
-            height: $size-4;
-            width: calc(100% - #{$size-5} - #{$size-2} );
-            max-width: calc(#{$size-6} + #{$size-5} - #{$size-2} );
-            min-width: calc(#{$size-6} + #{$size-3} - #{$size-2} );
+            height: $size-xl;
+            width: calc(100% - #{$size-xxl} - #{$size-md} );
+            max-width: calc(#{$size-hg} + #{$size-xxl} - #{$size-md} );
+            min-width: calc(#{$size-hg} + #{$size-lg} - #{$size-md} );
             background-color: $color-secondary-dark;
-            border-radius: 0 $size-3 $size-3 0;
+            border-radius: 0 $size-lg $size-lg 0;
 
             @media (max-width: 992px) {
-                width: calc(100% - #{$size-3} - #{$size-2});
-                min-width: calc(#{$size-5} + #{$size-4} - #{$size-2});
+                width: calc(100% - #{$size-lg} - #{$size-md});
+                min-width: calc(#{$size-xxl} + #{$size-xl} - #{$size-md});
             }
 
             @media (max-width: 768px) {
-                top: -$size-1;
-                left: -$size-1;
-                width: calc(100% - #{$size-3} - #{$size-3});
-                min-width: calc(#{$size-5} + #{$size-2} + #{$size-0} );
-                height: calc(#{$size-3} + #{$size-1});
-                border-radius: calc(#{$size-2} + #{$size-0});
-                margin-left: $size-3;
+                top: -$size-sm;
+                left: -$size-sm;
+                width: calc(100% - #{$size-lg} - #{$size-lg});
+                min-width: calc(#{$size-xxl} + #{$size-md} + #{$size-xs} );
+                height: calc(#{$size-lg} + #{$size-sm});
+                border-radius: calc(#{$size-md} + #{$size-xs});
+                margin-left: $size-lg;
             }
 
             @media (max-width: 576px) {
-                top: -$size-1;
-                left: -$size-3;
-                width: calc(100% - 2 * #{$size-1});
+                top: -$size-sm;
+                left: -$size-lg;
+                width: calc(100% - 2 * #{$size-sm});
                 min-width: unset;
-                border-radius: 0 calc(#{$size-2} + #{$size-0}) calc(#{$size-2} + #{$size-0}) 0;
+                border-radius: 0 calc(#{$size-md} + #{$size-xs}) calc(#{$size-md} + #{$size-xs}) 0;
+            }
+
+            @media (max-width: 480px) {
+                top: -$size-xs;
+                height: calc(#{$size-md} + #{$size-sm});
+                border-radius: 0 calc(#{$size-sm} + #{$size-xs}) calc(#{$size-sm} + #{$size-xs}) 0;
             }
 
         }
@@ -105,92 +115,117 @@ body {
             z-index: 2;
             display: flex;
             align-items: center;
-            height: $size-4;
-            width: calc(100% - #{$size-5});
-            max-width: calc(#{$size-6} + #{$size-5});
-            min-width: calc(#{$size-6} + #{$size-3});
+            height: $size-xl;
+            width: calc(100% - #{$size-xxl});
+            max-width: calc(#{$size-hg} + #{$size-xxl});
+            min-width: calc(#{$size-hg} + #{$size-lg});
             background-color: $color-primary;
-            border-radius: 0 $size-3 $size-3 0;
-            margin: $size-3 auto $size-3 0;
+            border-radius: 0 $size-lg $size-lg 0;
+            margin: $size-lg auto $size-lg 0;
 
             @media (max-width: 992px) {
-                width: calc(100% - #{$size-3});
-                min-width: calc(#{$size-5} + #{$size-4});
+                width: calc(100% - #{$size-lg});
+                min-width: calc(#{$size-xxl} + #{$size-xl});
             }
 
             @media (max-width: 768px) {
-                width: calc(100% - #{$size-3} - #{$size-3});
-                min-width: calc(#{$size-5} + #{$size-2} + #{$size-0});
-                height: calc(#{$size-3} + #{$size-1});
-                border-radius: calc(#{$size-2} + #{$size-0});
-                margin-left: $size-3;
-                margin-bottom: $size-3;
+                width: calc(100% - #{$size-lg} - #{$size-lg});
+                min-width: calc(#{$size-xxl} + #{$size-md} + #{$size-xs});
+                height: calc(#{$size-lg} + #{$size-sm});
+                border-radius: calc(#{$size-md} + #{$size-xs});
+                margin-left: $size-lg;
+                margin-bottom: $size-lg;
+                margin-top: $size-md;
             }
 
             @media (max-width: 576px) {
                 margin-left: 0;
-                margin-bottom: $size-3;
-                width: calc(100% - #{$size-1});
+                margin-bottom: $size-lg;
+                width: calc(100% - #{$size-sm});
                 min-width: unset;
-                border-radius: 0 calc(#{$size-2} + #{$size-0}) calc(#{$size-2} + #{$size-0}) 0;
+                border-radius: 0 calc(#{$size-md} + #{$size-xs}) calc(#{$size-md} + #{$size-xs}) 0;
+            }
+
+            @media (max-width: 480px) {
+                height: calc(#{$size-md} + #{$size-sm});
+                border-radius: 0 calc(#{$size-sm} + #{$size-xs}) calc(#{$size-sm} + #{$size-xs}) 0;
+            }
+
+            @media (max-width: 360px) {
+                width: calc(100% - #{$size-xs});
             }
 
             .main-banner__content {
                 display: flex;
-                padding-left: calc(#{$size-4} + 4 * #{$size-1} );
-                margin-right: $size-1;
+                padding-left: calc(#{$size-xl} + 4 * #{$size-sm} );
+                margin-right: $size-sm;
 
                 @media (max-width: 992px) {
-                    padding-left: calc(#{$size-4} + 5 * #{$size-0} );
+                    padding-left: calc(#{$size-xl} + 5 * #{$size-xs} );
                 }
 
                 @media (max-width: 768px) {
-                    padding-left: calc(#{$size-2} + #{$size-1} + #{$size-0} );
-                    margin-right: $size-0;
+                    padding-left: calc(#{$size-md} + #{$size-sm} + #{$size-xs} );
+                    margin-right: $size-xs;
+                }
+
+                @media (max-width: 480px) {
+                    padding-left: calc(#{$size-md});
                 }
 
                 .main-banner__image {
                     position: absolute;
-                    top: -$size-1;
-                    left: $size-1;
+                    top: -$size-sm;
+                    left: $size-sm;
                     border-radius: 50%;
-                    height: calc(#{$size-4} + 2 * #{$size-1});
-                    width: calc(#{$size-4} + 2 * #{$size-1});
+                    height: calc(#{$size-xl} + 2 * #{$size-sm});
+                    width: calc(#{$size-xl} + 2 * #{$size-sm});
 
                     @media (max-width: 992px) {
-                        top: -$size-0;
-                        left: $size-0;
-                        height: calc(#{$size-4} + 2 * #{$size-0});
-                        width: calc(#{$size-4} + 2 * #{$size-0});
+                        top: -$size-xs;
+                        left: $size-xs;
+                        height: calc(#{$size-xl} + 2 * #{$size-xs});
+                        width: calc(#{$size-xl} + 2 * #{$size-xs});
                     }
 
                     @media (max-width: 768px) {
-                        top: $size-2;
-                        left: calc(#{$size-0} - #{$size-3});
-                        height: calc(#{$size-3} + #{$size-2});
-                        width: calc(#{$size-3} + #{$size-2});
+                        top: $size-md;
+                        left: calc(#{$size-xs} - #{$size-lg});
+                        height: calc(#{$size-lg} + #{$size-md});
+                        width: calc(#{$size-lg} + #{$size-md});
                     }
 
                     @media (max-width: 576px) {
-                        top: $size-2;
-                        left: calc(-#{$size-1});
+                        top: $size-md;
+                        left: -$size-sm;
+                    }
+
+                    @media (max-width: 480px) {
+                        height: $size-lg;
+                        width: $size-lg;
+                        left: -$size-xs;
+                        top: calc(#{$size-md} - #{$size-mi});
                     }
 
                 }
 
                 .main-banner__text {
                     .main-banner__title {
-                        font-size: $font-size-large;
+                        font-size: $font-size-xl;
                         color: $color-gray-light;
                         font-weight: normal;
 
                         @media (max-width: 992px) {
-                            font-size: $font-size-medium;
+                            font-size: $font-size-lg;
                             font-weight: bold;
                         }
 
                         @media (max-width: 768px) {
-                            font-size: $font-size-small;
+                            font-size: $font-size-md;
+                        }
+
+                        @media (max-width: 480px) {
+                            font-size: $font-size-xs;
                         }
                     }
 
@@ -199,16 +234,25 @@ body {
                         font-weight: normal;
 
                         @media (max-width: 768px) {
-                            font-size: $font-size-small;
-                            margin-left: $size-0;
+                            font-size: $font-size-md;
+                            margin-left: $size-xs;
                         }
 
                         @media (max-width: 768px) {
-                            margin-left: $size-2;
+                            margin-left: $size-md;
                         }
 
                         @media (max-width: 576px) {
-                            margin-left: $size-2;
+                            margin-left: $size-md;
+                        }
+
+                        @media (max-width: 480px) {
+                            font-size: $font-size-xxs;
+                            margin-left: $size-sm;
+                        }
+
+                        @media (max-width: 360px) {
+                            margin-left: calc(#{$size-sm} + #{$size-xs});
                         }
                     }
                 }
@@ -220,12 +264,12 @@ body {
     .site__carousel-section {
         display: flex;
         justify-content: space-between;
-        margin: $size-2 auto;
-        padding: 0 $size-3;
-        max-width: $size-7;
+        margin: $size-md auto;
+        padding: 0 $size-lg;
+        max-width: $size-gt;
 
         @media (max-width: 1200px) {
-            padding: 0 $size-2;
+            padding: 0 $size-md;
         }
 
         @media (max-width: 992px) {
@@ -233,38 +277,54 @@ body {
             align-items: center;
         }
 
+        @media (max-width: 360px) {
+            padding: 0 $size-sm;
+        }
+
         .carousel-section__text {
             flex: 1;
-            max-width: calc(#{$size-6} + #{$size-4});
+            max-width: calc(#{$size-hg} + #{$size-xl});
             display: flex;
             flex-direction: column;
             justify-content: center;
 
             @media (max-width: 992px) {
-                margin-bottom: $size-2;
+                margin-bottom: $size-md;
             }
 
             @media (max-width: 576px) {
-                margin-bottom: $size-1;
+                margin-bottom: $size-sm;
+            }
+
+            @media (max-width: 360px) {
+                margin-bottom: 0;
             }
 
             .carousel-section__title {
                 color: $color-gray-dark;
 
                 @media (max-width: 768px) {
-                    font-size: $font-size-small;
+                    font-size: $font-size-md;
                     font-weight: bold;
+                }
+
+                @media (max-width: 480px) {
+                    font-size: $font-size-xs;
                 }
             }
 
             .carousel-section__description {
-                font-size: $font-size-small;
+                font-size: $font-size-md;
                 color: $color-gray-dark;
-                margin: 0 0 $size-1 0;
+                margin: 0 0 $size-sm 0;
 
 
                 @media (max-width: 768px) {
-                    font-size: $font-size-smaller;
+                    font-size: $font-size-sm;
+                }
+
+                @media (max-width: 480px) {
+                    font-size: $font-size-xxs;
                 }
             }
         }
@@ -273,18 +333,27 @@ body {
             flex-shrink: 0;
             position: relative;
             flex-direction: column;
-            width: calc( #{$size-5} + #{$size-2} );
-            height: calc( #{$size-5} + #{$size-3} );
+            width: calc( #{$size-xxl} + #{$size-md} );
+            height: calc( #{$size-xxl} + #{$size-lg} );
 
             @media (max-width: 992px) {
-                width: calc( #{$size-5} + #{$size-3} );
-                height: calc( #{$size-5} + #{$size-2} );
-                margin-bottom: $size-2;
+                width: calc( #{$size-xxl} + #{$size-lg} );
+                height: calc( #{$size-xxl} + #{$size-md} );
+                margin-bottom: $size-md;
             }
 
             @media (max-width: 576px) {
-                width: $size-5;
-                height: calc(#{$size-4} + #{$size-3});
+                width: $size-xxl;
+                height: calc(#{$size-xl} + #{$size-lg});
+            }
+
+            @media (max-width: 480px) {
+                width: calc(#{$size-xxl} - #{$size-md});
+            }
+
+            @media (max-width: 360px) {
+                width: calc(#{$size-xl} + #{$size-md});
+                height: calc(#{$size-xl} + #{$size-md});
             }
 
             .carousel-section__circle {
@@ -293,83 +362,118 @@ body {
 
                 &--small {
                     position: absolute;
-                    left: calc( #{$size-3} + #{$size-1} );
+                    left: calc( #{$size-lg} + #{$size-sm} );
                     top: 0;
-                    width: $size-3;
-                    height: $size-3;
-                    font-size: $font-size-small;
+                    width: $size-lg;
+                    height: $size-lg;
+                    font-size: $font-size-md;
                     background-color: $color-secondary;
                     display: flex;
                     align-items: center;
                     justify-content: flex-end;
                     color: $color-gray-light;
-                    padding: $size-0;
+                    padding: $size-xs;
 
                     @media (max-width: 992px) {
-                        top: calc( #{$size-3} + #{$size-1} );
+                        top: calc( #{$size-lg} + #{$size-sm} );
                         left: 0;
                     }
 
                     @media (max-width: 576px) {
                         border-radius: 0;
                         z-index: 2;
-                        height: $size-2;
-                        width: $size-3;
-                        top: calc( #{$size-4} + #{$size-3} - #{$size-2} );
+                        height: $size-md;
+                        width: $size-lg;
+                        top: calc( #{$size-xl} + #{$size-lg} - #{$size-md} );
                         left: 0;
-                        padding: 0 $size-0;
+                        padding: 0 $size-xs;
                         background-color: #E3A94D;
-                        box-shadow: unset;
+                    }
+
+                    @media (max-width: 480px) {
+                        width: calc(#{$size-lg} - #{$size-xs} - #{$size-sm});
+                        padding: 0 $size-xs;
+                        font-size: $font-size-xs;
+                        font-weight: bold;
+                    }
+
+                    @media (max-width: 360px) {
+                        width: $size-md;
+                        top: calc(#{$size-xl} - #{$size-xs});
                     }
                 }
 
                 &--medium {
                     position: absolute;
-                    top: $size-2;
+                    top: $size-md;
                     left: 0;
-                    width: $size-4;
-                    height: $size-4;
-                    font-size: $font-size-small;
+                    width: $size-xl;
+                    height: $size-xl;
+                    font-size: $font-size-md;
                     background-color: $color-primary;
                     display: flex;
                     align-items: center;
                     justify-content: flex-start;
                     color: $color-gray-light;
-                    padding: $size-0;
+                    padding: $size-xs;
 
                     @media (max-width: 992px) {
                         top: 0;
-                        left: $size-2;
+                        left: $size-md;
                     }
 
                     @media (max-width: 576px) {
                         border-radius: 0;
                         z-index: 2;
-                        height: $size-2;
-                        width: calc(#{$size-5} - #{$size-3} - 4 * #{$size-0});
-                        top: calc(#{$size-4} + #{$size-3} - #{$size-1});
-                        left: calc(#{$size-3} + 2 * #{$size-0});
-                        padding: 0 $size-0;
-                        box-shadow: unset;
+                        height: $size-md;
+                        width: calc(#{$size-xxl} - #{$size-lg} - 4 * #{$size-xs});
+                        top: calc(#{$size-xl} + #{$size-lg} - #{$size-sm});
+                        left: calc(#{$size-lg} + 2 * #{$size-xs});
+                        padding: 0 $size-xs;
                     }
+
+                    @media (max-width: 480px) {
+                        left: calc(#{$size-lg} + #{$size-xs} - #{$size-sm}) ;
+                        width: calc(#{$size-xl} + #{$size-sm} + #{$size-xs});
+                        padding: 0 $size-xs;
+                        font-size: $font-size-xs;
+                    }
+
+                    @media (max-width: 360px) {
+                        left: 0;
+                        width: calc(#{$size-xl} + #{$size-sm});
+                        top: calc(#{$size-xl} + #{$size-md} - #{$size-xs});
+                    }
+
                 }
 
                 &--large {
                     position: absolute;
-                    top: $size-3;
-                    left: $size-2;
-                    width: $size-5;
-                    height: $size-5;
+                    top: $size-lg;
+                    left: $size-md;
+                    width: $size-xxl;
+                    height: $size-xxl;
 
                     @media (max-width: 992px) {
-                        top: $size-2;
-                        left: $size-3;
+                        top: $size-md;
+                        left: $size-lg;
                     }
+
                     @media (max-width: 576px) {
                         top: 0;
-                        left: $size-2;
-                        width: calc(#{$size-4} + #{$size-3});
-                        height: calc(#{$size-4} + #{$size-3});
+                        left: $size-md;
+                        width: calc(#{$size-xl} + #{$size-lg});
+                        height: calc(#{$size-xl} + #{$size-lg});
+                    }
+
+                    @media (max-width: 480px) {
+                        left: $size-sm;
+                    }
+
+                    @media (max-width: 360px) {
+                        width: calc(#{$size-xl} + #{$size-md});
+                        height: calc(#{$size-xl} + #{$size-md});
+                        left:0;
                     }
 
                     img {
@@ -385,24 +489,35 @@ body {
     .site__projects-banner {
         text-align: center;
         background-color: $color-primary;
-        padding: $size-2;
+        padding: $size-md;
+
+        @media (max-width: 480px) {
+            padding: $size-sm $size-sm $size-md $size-sm;
+        }
 
         .projects-banner__title {
             display: block;
-            font-size: $font-size-large;
-            margin: 0 0 $size-2 0;
+            font-size: $font-size-xl;
+            margin: 0 0 $size-md 0;
             color: $color-gray-light;
 
             @media (max-width: 576px) {
-                font-size: $font-size-medium;
-                font-weight: bold;  
+                font-size: $font-size-lg;
+                font-weight: bold;
+                margin-bottom: $size-sm;
+            }
+
+            @media (max-width: 480px) {
+                font-size: $font-size-md;
+                font-weight: normal;
+                margin-bottom: $size-xs;
             }
         }
 
         .projects-banner__cards {
             display: flex;
             justify-content: space-between;
-            max-width: $size-7;
+            max-width: $size-gt;
             margin: 0 auto;
 
             @media (max-width: 1200px) {
@@ -419,8 +534,8 @@ body {
                 //flex: 1;
                 text-align: left;
                 vertical-align: top;
-                padding: $size-1;
-                border-radius: $size-1;
+                padding: $size-sm;
+                border-radius: $size-sm;
                 display: flex;
                 justify-content: space-between;
                 align-items: center;
@@ -430,7 +545,7 @@ body {
                     flex-direction: column-reverse;
                     justify-content: flex-start;
                     text-align: center;
-                    width: calc( 1.176 * #{$size-4} );
+                    width: calc( 1.176 * #{$size-xl} );
                     
                 }
 
@@ -438,18 +553,28 @@ body {
                     flex-direction: column-reverse;
                     justify-content: flex-start;
                     text-align: center;
-                    width: calc(#{$size-4} + #{$size-2});
-                    padding: $size-1 $size-0;
+                    width: calc(#{$size-xl} + #{$size-md});
+                    padding: $size-sm $size-xs;
+                }
+
+                @media (max-width: 480px) {
+                    width: auto;
+                    padding: $size-xs;
                 }
             
 
                 &--left {
                     background-color: $color-primary-light;
-                    margin-right: $size-2;
+                    margin-right: $size-md;
 
                     @media (max-width: 768px) {
                         margin-right: 0;
-                        margin-bottom: $size-2;
+                        margin-bottom: $size-md;
+                    }
+
+                    @media (max-width: 576px) {
+                        margin-right: 0;
+                        margin-bottom: $size-sm;
                     }
                 }
             
@@ -458,10 +583,10 @@ body {
                 }
     
                 .card__text-content {
-                    margin: $size-0;
+                    margin: $size-xs;
 
                     @media (min-width: 769px) and (max-width: 1200px) {
-                        margin: $size-0 0;
+                        margin: $size-xs 0;
                     }
 
                     .card__title {
@@ -473,17 +598,25 @@ body {
                         }
 
                         @media (max-width: 768px) {
-                            font-size: $font-size-small;
+                            font-size: $font-size-md;
                             font-weight: bold;
+                        }
+
+                        @media (max-width: 480px) {
+                            font-size: $font-size-xs;
                         }
                     }
         
                     .card__description {
-                        font-size: $font-size-small;
+                        font-size: $font-size-md;
                         color: $color-gray-light;
     
                         @media (max-width: 576px) {
-                            font-size: $font-size-smaller;
+                            font-size: $font-size-sm;
+                        }
+
+                        @media (max-width: 480px) {
+                            font-size: $font-size-xxs;
                         }
 
                         &--right {
@@ -493,13 +626,18 @@ body {
                 }
     
                 .card__image {
-                    height: $size-4;
-                    width: calc( 1.176 * #{$size-4} );
-                    border-radius: $size-0;
+                    height: $size-xl;
+                    width: calc( 1.176 * #{$size-xl} );
+                    border-radius: $size-xs;
 
                     @media (max-width: 768px) {
-                        height: calc(#{$size-4} / 1.176);
-                        width: $size-4; 
+                        height: calc(#{$size-xl} / 1.176);
+                        width: $size-xl; 
+                    }
+
+                    @media (max-width: 480px) {
+                        height: calc(#{$size-lg} + #{$size-sm});
+                        width: calc(( #{$size-lg} + #{$size-sm} ) * 1.176);
                     }
 
                 }
@@ -510,17 +648,24 @@ body {
 
     .site__video-section {
         text-align: center;
-        padding: $size-3 0;
+        padding: $size-lg 0;
+
 
         .video-section__title {
-            font-size: $font-size-large;
-            margin: 0 0 $size-1 0;
+            font-size: $font-size-xl;
+            margin: 0 0 $size-sm 0;
             color: $color-gray-dark;
             font-weight: normal;
 
             @media (max-width: 576px) {
-                font-size: $font-size-medium;
+                font-size: $font-size-lg;
                 font-weight: bold;  
+            }
+
+            @media (max-width: 480px) {
+                font-size: $font-size-md;
+                font-weight: normal;
+                margin-bottom: $size-xs;
             }
         }
 
@@ -537,17 +682,27 @@ body {
                 position: relative;
 
                 iframe {
-                    height: $size-5;
-                    width: calc(16 * #{$size-5} / 9);
+                    height: $size-xxl;
+                    width: calc(16 * #{$size-xxl} / 9);
 
                     @media (max-width: 768px) {
-                        height: calc( #{$size-4} + #{$size-3});
-                        width: calc( 16 * ( #{$size-4} + #{$size-3} ) / 9);
+                        height: calc( #{$size-xl} + #{$size-lg});
+                        width: calc( 16 * ( #{$size-xl} + #{$size-lg} ) / 9);
                     }
 
                     @media (max-width: 576px) {
-                        height: calc( #{$size-4} + #{$size-2});
-                        width: calc( 16 * ( #{$size-4} + #{$size-2} ) / 9);
+                        height: calc( #{$size-xl} + #{$size-md});
+                        width: calc( 16 * ( #{$size-xl} + #{$size-md} ) / 9);
+                    }
+
+                    @media (max-width: 480px) {
+                        height: $size-xl;
+                        width: calc( 16 * #{$size-xl} / 9);
+                    }
+
+                    @media (max-width: 360px) {
+                        height: calc( 9 * ( #{$size-xl} + #{$size-lg} ) / 16);
+                        width: calc( #{$size-xl} + #{$size-lg});
                     }
                 }
 
@@ -556,8 +711,8 @@ body {
                     top: 50%;
                     left: 50%;
                     transform: translate(-50%, -50%);
-                    width: $size-3;
-                    height: $size-3;
+                    width: $size-lg;
+                    height: $size-lg;
                     cursor: pointer;
             
                     img {
@@ -571,21 +726,29 @@ body {
                 display: flex;
                 flex-direction: column;
                 justify-content: center;
-                margin: 0 $size-2;
+                margin: 0 $size-md;
 
                 @media (max-width: 992px) {
                     flex-direction: row-reverse;
-                    width: calc(16 * #{$size-5} / 9); //equals iframe
+                    width: calc(16 * #{$size-xxl} / 9); //equals iframe
                     justify-content: flex-start;
                     margin: 0 auto;
                 }
 
                 @media (max-width: 768px) {
-                    width: calc( 16 * ( #{$size-4} + #{$size-3} ) / 9);; //equals iframe
+                    width: calc( 16 * ( #{$size-xl} + #{$size-lg} ) / 9); //equals iframe
                 }
 
                 @media (max-width: 576px) {
-                    width: calc( 16 * ( #{$size-4} + #{$size-2} ) / 9); //equals iframe
+                    width: calc( 16 * ( #{$size-xl} + #{$size-md} ) / 9); //equals iframe
+                }
+
+                @media (max-width: 480px) {
+                    width: calc( 16 * #{$size-xl} / 9); //equals iframe
+                }
+
+                @media (max-width: 360px) {
+                    width: calc( #{$size-xl} + #{$size-lg}); //equals iframe
                 }
             
                 .video-section__button {
@@ -593,21 +756,21 @@ body {
                     background-color: $color-primary-light;
                     border: none;
                     border-radius: 50%;
-                    width: $size-3;
-                    height: $size-3;
-                    margin: $size-0 0;
+                    width: $size-lg;
+                    height: $size-lg;
+                    margin: $size-xs 0;
                     cursor: pointer;
                     background-size: cover; 
                     background-position: center; 
                     overflow: hidden; 
 
                     @media (max-width: 992px) {
-                        margin: 0 $size-0;
+                        margin: 0 $size-xs;
                     }
 
                     @media (max-width: 768px) {
-                        width: $size-2;
-                        height: $size-2;
+                        width: $size-md;
+                        height: $size-md;
                     }
             
                     &--en {
@@ -643,31 +806,43 @@ body {
 
     .site__links-section {
         text-align: center;
-        padding: 0 0 $size-3 0;
+        padding: 0 0 $size-lg 0;
 
         .links-section__title {
-            font-size: $font-size-large;
-            margin-bottom: $size-1;
+            font-size: $font-size-xl;
+            margin-bottom: $size-sm;
             color: $color-gray-dark;
             font-weight: normal;
 
             @media (max-width: 576px) {
-                font-size: $font-size-medium;
+                font-size: $font-size-lg;
                 font-weight: bold;  
+            }
+
+            @media (max-width: 480px) {
+                font-size: $font-size-md;
+                font-weight: normal;
+                margin-bottom: $size-xs;
             }
         }
 
         .links-section__buttons {
             display: flex;
             background-color: $color-primary-light;
-            border-radius: calc( 0.5 * #{$size-3} + #{$size-1});
-            padding: $size-1;
-            width: calc( 3 * #{$size-3} + 3 * 2 * #{$size-1});
+            border-radius: calc( 0.5 * #{$size-lg} + #{$size-sm});
+            padding: $size-sm;
+            width: calc( 3 * #{$size-lg} + 3 * 2 * #{$size-sm});
             margin: 0 auto;
             box-shadow: 6px 6px 12px 0px $color-shadow;
 
             @media (max-width: 768px) {
-                width: calc( 3 * #{$size-3} - 3 * #{$size-1} + 3 * 2 * #{$size-0});
+                width: calc( 3 * #{$size-lg} - 3 * #{$size-sm} + 3 * 2 * #{$size-xs});
+            }
+
+            @media (max-width: 480px) {
+                width: calc( 3 * #{$size-md} + 3 * 2 * #{$size-mi});
+                border-radius: calc( 0.5 * #{$size-md} + #{$size-xs});
+                padding: $size-xs;
             }
 
             .links-section__button {
@@ -675,9 +850,9 @@ body {
                 background-color: $color-primary-light;
                 border: none;
                 border-radius: 50%;
-                width: $size-3;
-                height: $size-3;
-                margin: 0 $size-1;
+                width: $size-lg;
+                height: $size-lg;
+                margin: 0 $size-sm;
                 cursor: pointer;
                 background-size: cover;
                 background-position: center;
@@ -685,9 +860,15 @@ body {
                 overflow: hidden;
 
                 @media (max-width: 768px) {
-                    margin: 0 $size-0;
-                    width: calc(#{$size-3} - #{$size-1});
-                    height: calc(#{$size-3} - #{$size-1});
+                    margin: 0 $size-xs;
+                    width: calc(#{$size-lg} - #{$size-sm});
+                    height: calc(#{$size-lg} - #{$size-sm});
+                }
+
+                @media (max-width: 480px) {
+                    margin: 0 $size-mi;
+                    width: $size-md;
+                    height: $size-md;
                 }
 
                 &--linkedin {
@@ -722,15 +903,15 @@ body {
 
     .site__footer {
         text-align: center;
-        padding: $size-2 $size-2 $size-3 $size-2;
+        padding: $size-md $size-md $size-lg $size-md;
         background-color: $color-secondary-dark;
         color: $color-gray-light;
 
         .footer__privacy-link {
             color: $color-secondary-light;
             text-decoration: none;
-            margin-bottom: $size-1;
-            font-size: $font-size-small;
+            margin-bottom: $size-sm;
+            font-size: $font-size-md;
 
             &:hover {
                 text-decoration: underline;
@@ -738,7 +919,19 @@ body {
         }
 
         .footer__text {
-            font-size: $font-size-small;
+            font-size: $font-size-md;
+
+            @media (max-width: 768px) {
+                font-size: $font-size-sm;
+            }
+
+            @media (max-width: 576px) {
+                font-size: $font-size-xs;
+            }
+
+            @media (max-width: 480px) {
+                font-size: $font-size-xxs;
+            }
         }
     }
 }
