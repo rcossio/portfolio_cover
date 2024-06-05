@@ -330,7 +330,8 @@ body {
           top: 100px;
           left: 50px;
           width: 400px;
-          height: 400px; }
+          height: 400px;
+          background-color: #E3A94D; }
           @media (max-width: 992px) {
             .site .site__carousel-section .carousel-section__circles .carousel-section__circle--large {
               top: 50px;
@@ -352,7 +353,10 @@ body {
           .site .site__carousel-section .carousel-section__circles .carousel-section__circle--large img {
             width: 100%;
             height: 100%;
-            border-radius: 50%; }
+            border-radius: 50%;
+            transition: opacity ease-in-out; }
+            .site .site__carousel-section .carousel-section__circles .carousel-section__circle--large img.fade-out {
+              opacity: 0; }
   .site .site__projects-banner {
     text-align: center;
     background-color: #59729A;
