@@ -600,60 +600,34 @@ body {
             background: rgba(0, 0, 0, 0.3); }
   .site .site__links-section {
     text-align: center;
-    padding: 0 0 100px 0; }
+    padding-bottom: 100px;
+    max-width: 100%;
+    margin: 0 auto; }
     .site .site__links-section .links-section__title {
-      font-size: 44px;
-      margin-bottom: 25px;
+      font-size: clamp(24px, 5vh, 44px);
+      margin-bottom: clamp(12px, 2.5vh, 25px);
       color: #000000;
       font-weight: normal; }
-      @media (max-width: 576px) {
-        .site .site__links-section .links-section__title {
-          font-size: 32px;
-          font-weight: bold; } }
-      @media (max-width: 480px) {
-        .site .site__links-section .links-section__title {
-          font-size: 24px;
-          font-weight: normal;
-          margin-bottom: 12px; } }
     .site .site__links-section .links-section__buttons {
       display: flex;
+      justify-content: space-around;
       background-color: #4A82D6;
-      border-radius: calc( 0.5 * 100px + 25px);
-      padding: 25px;
-      width: calc( 3 * 100px + 3 * 2 * 25px);
+      border-radius: 9999px;
+      padding: clamp(12px, 2vh, 25px);
+      width: clamp(250px, 60vw, 600px);
       margin: 0 auto;
       box-shadow: 6px 6px 12px 0px rgba(0, 0, 0, 0.5); }
-      @media (max-width: 768px) {
-        .site .site__links-section .links-section__buttons {
-          width: calc( 3 * 100px - 3 * 25px + 3 * 2 * 12px); } }
-      @media (max-width: 480px) {
-        .site .site__links-section .links-section__buttons {
-          width: calc( 3 * 50px + 3 * 2 * 6px);
-          border-radius: calc( 0.5 * 50px + 12px);
-          padding: 12px; } }
       .site .site__links-section .links-section__buttons .links-section__button {
         position: relative;
-        background-color: #4A82D6;
-        border: none;
         border-radius: 50%;
-        width: 100px;
-        height: 100px;
-        margin: 0 25px;
+        width: clamp(50px, 7vw, 100px);
+        height: clamp(50px, 7vw, 100px);
+        margin: 0 clamp(6px, 1vw, 25px);
         cursor: pointer;
         background-size: cover;
         background-position: center;
         background-color: white;
         overflow: hidden; }
-        @media (max-width: 768px) {
-          .site .site__links-section .links-section__buttons .links-section__button {
-            margin: 0 12px;
-            width: calc(100px - 25px);
-            height: calc(100px - 25px); } }
-        @media (max-width: 480px) {
-          .site .site__links-section .links-section__buttons .links-section__button {
-            margin: 0 6px;
-            width: 50px;
-            height: 50px; } }
         .site .site__links-section .links-section__buttons .links-section__button--linkedin {
           background-image: url("../img/linkedin.svg"); }
         .site .site__links-section .links-section__buttons .links-section__button--github {
