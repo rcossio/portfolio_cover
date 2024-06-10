@@ -633,7 +633,8 @@ body {
                 .card__image {
                     height: $size-xl;
                     width: calc( 1.176 * #{$size-xl} );
-                    border-radius: $size-xs;
+                    position: relative;
+                    z-index: 0;
 
                     @media (max-width: 768px) {
                         height: calc(#{$size-xl} / 1.176);
@@ -645,7 +646,24 @@ body {
                         width: calc(( #{$size-lg} + #{$size-sm} ) * 1.176);
                     }
 
+                    img {
+                        height: 100%;
+                        width: 100%;
+                        border-radius: $size-xs;
+                    }
+
+                    .card__svg {
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                        height: 100%;
+                        width: 100%;
+                        z-index: 1;
+                    }
+
                 }
+
+
                 
             }
         }

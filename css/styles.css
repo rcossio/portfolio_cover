@@ -462,7 +462,8 @@ body {
         .site .site__projects-banner .projects-banner__cards .projects-banner__card .card__image {
           height: 200px;
           width: calc( 1.176 * 200px);
-          border-radius: 12px; }
+          position: relative;
+          z-index: 0; }
           @media (max-width: 768px) {
             .site .site__projects-banner .projects-banner__cards .projects-banner__card .card__image {
               height: calc(200px / 1.176);
@@ -471,6 +472,17 @@ body {
             .site .site__projects-banner .projects-banner__cards .projects-banner__card .card__image {
               height: calc(100px + 25px);
               width: calc(( 100px + 25px ) * 1.176); } }
+          .site .site__projects-banner .projects-banner__cards .projects-banner__card .card__image img {
+            height: 100%;
+            width: 100%;
+            border-radius: 12px; }
+          .site .site__projects-banner .projects-banner__cards .projects-banner__card .card__image .card__svg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 100%;
+            width: 100%;
+            z-index: 1; }
   .site .site__video-section {
     text-align: center;
     padding: 100px 0; }
