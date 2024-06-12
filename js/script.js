@@ -33,11 +33,11 @@ function initializeVideoButtons() {
 function initializeImageCarousel() {
     // Image carousel code
     const images = [
-        { src: './img/working1.webp', smallText: '2016', mediumText: 'PhD Student' },
+        { src: './img/working1.webp', smallText: '2016', mediumText: 'Studying PhD' },
         { src: './img/working2.webp', smallText: '2021', mediumText: 'Teaching Maths' },
-        { src: './img/working4.webp', smallText: '2022', mediumText: 'Sport Coaching' },
-        { src: './img/working5.webp', smallText: '2023', mediumText: 'Dublin Internship' },
-        { src: './img/working3.webp', smallText: '2024', mediumText: 'Padova Internship' }
+        { src: './img/working4.webp', smallText: '2022', mediumText: 'Coaching Sports' },
+        { src: './img/working5.webp', smallText: '2023', mediumText: 'Fellowship Dublin' },
+        { src: './img/working3.webp', smallText: '2024', mediumText: 'Fellowship Padova' }
     ];
 
     let currentIndex = 0;

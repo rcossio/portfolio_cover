@@ -3,7 +3,8 @@
   padding: 0;
   font-size: 32px;
   font-weight: normal;
-  font-family: "Montserrat", sans-serif; }
+  font-family: "Montserrat", sans-serif;
+  box-sizing: border-box; }
 
 body {
   color: #50545A;
@@ -258,7 +259,7 @@ body {
           width: 100px;
           height: 100px;
           font-size: 24px;
-          background-color: #8A7761;
+          background-color: #E3A94D;
           display: flex;
           align-items: center;
           justify-content: flex-end;
@@ -267,26 +268,26 @@ body {
           @media (max-width: 992px) {
             .site .site__carousel-section .carousel-section__circles .carousel-section__circle--small {
               top: calc( 100px + 25px);
-              left: 0; } }
+              left: 0;
+              justify-content: flex-start; } }
           @media (max-width: 576px) {
             .site .site__carousel-section .carousel-section__circles .carousel-section__circle--small {
+              justify-content: center;
               border-radius: 0;
               z-index: 2;
               height: 50px;
               width: 100px;
               top: calc( 200px + 100px - 50px);
               left: 0;
-              padding: 0 12px;
-              background-color: #E3A94D; } }
+              padding: 0 12px; } }
           @media (max-width: 480px) {
             .site .site__carousel-section .carousel-section__circles .carousel-section__circle--small {
-              width: calc(100px - 12px - 25px);
               padding: 0 12px;
               font-size: 18px;
               font-weight: bold; } }
           @media (max-width: 360px) {
             .site .site__carousel-section .carousel-section__circles .carousel-section__circle--small {
-              width: 50px;
+              width: 100px;
               top: calc(200px - 12px); } }
         .site .site__carousel-section .carousel-section__circles .carousel-section__circle--medium {
           position: absolute;
@@ -300,30 +301,30 @@ body {
           align-items: center;
           justify-content: flex-start;
           color: #F5F5F5;
-          padding: 12px; }
+          padding: 25px 100px 50px 12px;
+          hyphens: auto; }
           @media (max-width: 992px) {
             .site .site__carousel-section .carousel-section__circles .carousel-section__circle--medium {
               top: 0;
               left: 50px; } }
           @media (max-width: 576px) {
             .site .site__carousel-section .carousel-section__circles .carousel-section__circle--medium {
+              justify-content: center;
               border-radius: 0;
               z-index: 2;
               height: 50px;
-              width: calc(400px - 100px - 4 * 12px);
+              width: calc(100% - 100px);
               top: calc(200px + 100px - 25px);
-              left: calc(100px + 2 * 12px);
+              left: 100px;
               padding: 0 12px; } }
           @media (max-width: 480px) {
             .site .site__carousel-section .carousel-section__circles .carousel-section__circle--medium {
-              left: calc(100px + 12px - 25px);
-              width: calc(200px + 25px + 12px);
               padding: 0 12px;
               font-size: 18px; } }
           @media (max-width: 360px) {
             .site .site__carousel-section .carousel-section__circles .carousel-section__circle--medium {
               left: 0;
-              width: calc(200px + 25px);
+              width: 100%;
               top: calc(200px + 50px - 12px); } }
         .site .site__carousel-section .carousel-section__circles .carousel-section__circle--large {
           position: absolute;
@@ -331,7 +332,7 @@ body {
           left: 50px;
           width: 400px;
           height: 400px;
-          background-color: #E3A94D; }
+          background-color: #8A7761; }
           @media (max-width: 992px) {
             .site .site__carousel-section .carousel-section__circles .carousel-section__circle--large {
               top: 50px;
@@ -620,7 +621,7 @@ body {
       background-color: #4A82D6;
       border-radius: calc( 0.5 * 100px + 25px);
       padding: 25px;
-      width: calc( 3 * 100px + 3 * 2 * 25px);
+      width: 200px;
       margin: 0 auto;
       box-shadow: 6px 6px 12px 0px rgba(0, 0, 0, 0.5); }
       @media (max-width: 768px) {
