@@ -40,10 +40,10 @@ $font-size-xl: 44px;
     font-weight: normal;
     font-family: $font-family;
     box-sizing: border-box;
+    color: $color-gray-dark;
 }
 
 body {
-    color: $color-primary-dark;
     background-color: $color-gray-light;
 }
 
@@ -263,20 +263,12 @@ body {
         display: flex;
         justify-content: space-between;
         margin: $size-md auto;
-        padding: 0 $size-lg;
+        padding: 0 clamp($size-sm, 7vw, $size-lg);
         max-width: $size-gt;
-
-        @media (max-width: 1200px) {
-            padding: 0 $size-md;
-        }
 
         @media (max-width: 992px) {
             flex-direction: column;
             align-items: center;
-        }
-
-        @media (max-width: 360px) {
-            padding: 0 $size-sm;
         }
 
         .carousel-section__text {
@@ -285,45 +277,16 @@ body {
             display: flex;
             flex-direction: column;
             justify-content: center;
-
-            @media (max-width: 992px) {
-                margin-bottom: $size-md;
-            }
-
-            @media (max-width: 576px) {
-                margin-bottom: $size-sm;
-            }
-
-            @media (max-width: 360px) {
-                margin-bottom: 0;
-            }
+            margin-bottom: clamp(0px, calc(5vw - 18px), $size-md); // 0 at 360px
 
             .carousel-section__title {
-                color: $color-gray-dark;
-
-                @media (max-width: 768px) {
-                    font-size: $font-size-md;
-                    font-weight: bold;
-                }
-
-                @media (max-width: 480px) {
-                    font-size: $font-size-xs;
-                }
+                font-size: clamp($font-size-sm, calc(max(4vw,3vh)), $font-size-xl);
+                margin-bottom: clamp($size-xs, calc(max(2vw,1.5vh)), $size-sm);
             }
 
             .carousel-section__description {
-                font-size: $font-size-md;
-                color: $color-gray-dark;
+                font-size: clamp($font-size-xxs, 4vw, $font-size-md);
                 margin: 0 0 $size-sm 0;
-
-
-                @media (max-width: 768px) {
-                    font-size: $font-size-sm;
-                }
-
-                @media (max-width: 480px) {
-                    font-size: $font-size-xxs;
-                }
             }
         }
 
@@ -660,7 +623,6 @@ body {
         .video-section__title {
             font-size: clamp($font-size-md, calc(max(4vw,3vh)), $font-size-xl);
             margin-bottom: clamp($size-xs, calc(max(3vw,2vh)), $size-sm);
-            color: $color-gray-dark;
         }
 
         .video-section__content {
@@ -747,7 +709,6 @@ body {
         .links-section__title {
             font-size: clamp($font-size-md, calc(max(4vw,3vh)), $font-size-xl);
             margin-bottom: clamp($size-xs, calc(max(3vw,2vh)), $size-sm);
-            color: $color-gray-dark;
         }
 
         .links-section__buttons {

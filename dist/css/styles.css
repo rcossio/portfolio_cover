@@ -4,10 +4,10 @@
   font-size: 32px;
   font-weight: normal;
   font-family: "Montserrat", sans-serif;
-  box-sizing: border-box; }
+  box-sizing: border-box;
+  color: #000000; }
 
 body {
-  color: #50545A;
   background-color: #F5F5F5; }
 
 .site {
@@ -181,52 +181,25 @@ body {
     display: flex;
     justify-content: space-between;
     margin: 50px auto;
-    padding: 0 100px;
+    padding: 0 clamp(25px, 7vw, 100px);
     max-width: 1600px; }
-    @media (max-width: 1200px) {
-      .site .site__carousel-section {
-        padding: 0 50px; } }
     @media (max-width: 992px) {
       .site .site__carousel-section {
         flex-direction: column;
         align-items: center; } }
-    @media (max-width: 360px) {
-      .site .site__carousel-section {
-        padding: 0 25px; } }
     .site .site__carousel-section .carousel-section__text {
       flex: 1;
       max-width: calc(800px + 200px);
       display: flex;
       flex-direction: column;
-      justify-content: center; }
-      @media (max-width: 992px) {
-        .site .site__carousel-section .carousel-section__text {
-          margin-bottom: 50px; } }
-      @media (max-width: 576px) {
-        .site .site__carousel-section .carousel-section__text {
-          margin-bottom: 25px; } }
-      @media (max-width: 360px) {
-        .site .site__carousel-section .carousel-section__text {
-          margin-bottom: 0; } }
+      justify-content: center;
+      margin-bottom: clamp(0px, calc(5vw - 18px), 50px); }
       .site .site__carousel-section .carousel-section__text .carousel-section__title {
-        color: #000000; }
-        @media (max-width: 768px) {
-          .site .site__carousel-section .carousel-section__text .carousel-section__title {
-            font-size: 24px;
-            font-weight: bold; } }
-        @media (max-width: 480px) {
-          .site .site__carousel-section .carousel-section__text .carousel-section__title {
-            font-size: 18px; } }
+        font-size: clamp(20px, calc(max(4vw,3vh)), 44px);
+        margin-bottom: clamp(12px, calc(max(2vw,1.5vh)), 25px); }
       .site .site__carousel-section .carousel-section__text .carousel-section__description {
-        font-size: 24px;
-        color: #000000;
+        font-size: clamp(16px, 4vw, 24px);
         margin: 0 0 25px 0; }
-        @media (max-width: 768px) {
-          .site .site__carousel-section .carousel-section__text .carousel-section__description {
-            font-size: 20px; } }
-        @media (max-width: 480px) {
-          .site .site__carousel-section .carousel-section__text .carousel-section__description {
-            font-size: 16px; } }
     .site .site__carousel-section .carousel-section__circles {
       flex-shrink: 0;
       position: relative;
@@ -479,8 +452,7 @@ body {
     padding: 100px 0; }
     .site .site__video-section .video-section__title {
       font-size: clamp(24px, calc(max(4vw,3vh)), 44px);
-      margin-bottom: clamp(12px, calc(max(3vw,2vh)), 25px);
-      color: #000000; }
+      margin-bottom: clamp(12px, calc(max(3vw,2vh)), 25px); }
     .site .site__video-section .video-section__content {
       display: flex;
       justify-content: center;
@@ -539,8 +511,7 @@ body {
     padding: 0 0 100px 0; }
     .site .site__links-section .links-section__title {
       font-size: clamp(24px, calc(max(4vw,3vh)), 44px);
-      margin-bottom: clamp(12px, calc(max(3vw,2vh)), 25px);
-      color: #000000; }
+      margin-bottom: clamp(12px, calc(max(3vw,2vh)), 25px); }
     .site .site__links-section .links-section__buttons {
       display: flex;
       justify-content: center;
