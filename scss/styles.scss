@@ -68,45 +68,13 @@ body {
 
         .header__support-element {
             position: absolute;
-            top: -$size-md;
+            top: -$size-sm;
             left: 0;
             z-index: 1;
-            height: $size-xl;
-            width: calc(100% - #{$size-xxl} - #{$size-md} );
-            max-width: calc(#{$size-hg} + #{$size-xxl} - #{$size-md} );
-            min-width: calc(#{$size-hg} + #{$size-lg} - #{$size-md} );
+            height: clamp(75px, 16vw ,$size-xl); //TODO: evaluate fit-content
+            width: clamp(270px, 75vw, 1050px);
             background-color: $color-secondary-dark;
-            border-radius: 0 $size-lg $size-lg 0;
-
-            @media (max-width: 992px) {
-                width: calc(100% - #{$size-lg} - #{$size-md});
-                min-width: calc(#{$size-xxl} + #{$size-xl} - #{$size-md});
-            }
-
-            @media (max-width: 768px) {
-                top: -$size-sm;
-                left: -$size-sm;
-                width: calc(100% - #{$size-lg} - #{$size-lg});
-                min-width: calc(#{$size-xxl} + #{$size-md} + #{$size-xs} );
-                height: calc(#{$size-lg} + #{$size-sm});
-                border-radius: calc(#{$size-md} + #{$size-xs});
-                margin-left: $size-lg;
-            }
-
-            @media (max-width: 576px) {
-                top: -$size-sm;
-                left: -$size-lg;
-                width: calc(100% - 2 * #{$size-sm});
-                min-width: unset;
-                border-radius: 0 calc(#{$size-md} + #{$size-xs}) calc(#{$size-md} + #{$size-xs}) 0;
-            }
-
-            @media (max-width: 480px) {
-                top: -$size-xs;
-                height: calc(#{$size-md} + #{$size-sm});
-                border-radius: 0 calc(#{$size-sm} + #{$size-xs}) calc(#{$size-sm} + #{$size-xs}) 0;
-            }
-
+            border-radius: 0 9999px 9999px 0;
         }
 
         .header__main-banner {
@@ -114,45 +82,11 @@ body {
             z-index: 2;
             display: flex;
             align-items: center;
-            height: $size-xl;
-            width: calc(100% - #{$size-xxl});
-            max-width: calc(#{$size-hg} + #{$size-xxl});
-            min-width: calc(#{$size-hg} + #{$size-lg});
+            height: clamp(75px, 16vw ,$size-xl); //TODO: evaluate fit-content
+            width: clamp(310px, 85vw, 1200px);
             background-color: $color-primary;
-            border-radius: 0 $size-lg $size-lg 0;
-            margin: $size-lg auto $size-lg 0;
-
-            @media (max-width: 992px) {
-                width: calc(100% - #{$size-lg});
-                min-width: calc(#{$size-xxl} + #{$size-xl});
-            }
-
-            @media (max-width: 768px) {
-                width: calc(100% - #{$size-lg} - #{$size-lg});
-                min-width: calc(#{$size-xxl} + #{$size-md} + #{$size-xs});
-                height: calc(#{$size-lg} + #{$size-sm});
-                border-radius: calc(#{$size-md} + #{$size-xs});
-                margin-left: $size-lg;
-                margin-bottom: $size-lg;
-                margin-top: $size-md;
-            }
-
-            @media (max-width: 576px) {
-                margin-left: 0;
-                margin-bottom: $size-lg;
-                width: calc(100% - #{$size-sm});
-                min-width: unset;
-                border-radius: 0 calc(#{$size-md} + #{$size-xs}) calc(#{$size-md} + #{$size-xs}) 0;
-            }
-
-            @media (max-width: 480px) {
-                height: calc(#{$size-md} + #{$size-sm});
-                border-radius: 0 calc(#{$size-sm} + #{$size-xs}) calc(#{$size-sm} + #{$size-xs}) 0;
-            }
-
-            @media (max-width: 360px) {
-                width: calc(100% - #{$size-xs});
-            }
+            border-radius: 0 9999px 9999px 0;
+            margin: clamp($size-md, 7vw, $size-lg) auto $size-lg 0;
 
             .main-banner__content {
                 display: flex;
@@ -174,66 +108,24 @@ body {
 
                 .main-banner__image {
                     position: absolute;
-                    top: -$size-sm;
-                    left: $size-sm;
+                    top: clamp(-25px, calc(50px - 6vw), 50px);
+                    left: clamp(-25px, calc(-35px + 5vw), 25px); 
                     border-radius: 50%;
-                    height: calc(#{$size-xl} + 2 * #{$size-sm});
-                    width: calc(#{$size-xl} + 2 * #{$size-sm});
-
-                    @media (max-width: 992px) {
-                        top: -$size-xs;
-                        left: $size-xs;
-                        height: calc(#{$size-xl} + 2 * #{$size-xs});
-                        width: calc(#{$size-xl} + 2 * #{$size-xs});
-                    }
-
-                    @media (max-width: 768px) {
-                        top: $size-md;
-                        left: calc(#{$size-xs} - #{$size-lg});
-                        height: calc(#{$size-lg} + #{$size-md});
-                        width: calc(#{$size-lg} + #{$size-md});
-                    }
-
-                    @media (max-width: 576px) {
-                        top: $size-md;
-                        left: -$size-sm;
-                    }
-
-                    @media (max-width: 480px) {
-                        height: $size-lg;
-                        width: $size-lg;
-                        left: -$size-xs;
-                        top: calc(#{$size-md} - #{$size-mi});
-                    }
-
+                    height: clamp($size-lg, 20vw, 250px);
+                    width: clamp($size-lg, 20vw, 250px);
                 }
 
                 .main-banner__text {
                     .main-banner__title {
-                        font-size: $font-size-xl;
+                        font-size: clamp($font-size-xs, calc(max(4vw,2vh)), $font-size-xl);
                         color: $color-gray-light;
-                        font-weight: normal;
-
-                        @media (max-width: 992px) {
-                            font-size: $font-size-lg;
-                            font-weight: bold;
-                        }
-
-                        @media (max-width: 768px) {
-                            font-size: $font-size-md;
-                        }
-
-                        @media (max-width: 480px) {
-                            font-size: $font-size-xs;
-                        }
                     }
 
                     .main-banner__subtitle {
+                        font-size: clamp($font-size-xxs, calc(max(3vw,1.5vh)), $font-size-lg);
                         color: $color-secondary-light;
-                        font-weight: normal;
 
                         @media (max-width: 768px) {
-                            font-size: $font-size-md;
                             margin-left: $size-xs;
                         }
 
@@ -246,7 +138,6 @@ body {
                         }
 
                         @media (max-width: 480px) {
-                            font-size: $font-size-xxs;
                             margin-left: $size-sm;
                         }
 
@@ -786,6 +677,7 @@ body {
 
         .footer__text {
             font-size: clamp($font-size-xxs, 3vw, $font-size-md);
+            color: $color-gray-light;
         }
     }
 }

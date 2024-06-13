@@ -27,79 +27,23 @@ body {
     position: relative; }
     .site .site__header .header__support-element {
       position: absolute;
-      top: -50px;
+      top: -25px;
       left: 0;
       z-index: 1;
-      height: 200px;
-      width: calc(100% - 400px - 50px);
-      max-width: calc(800px + 400px - 50px);
-      min-width: calc(800px + 100px - 50px);
+      height: clamp(75px, 16vw, 200px);
+      width: clamp(270px, 75vw, 1050px);
       background-color: #332E26;
-      border-radius: 0 100px 100px 0; }
-      @media (max-width: 992px) {
-        .site .site__header .header__support-element {
-          width: calc(100% - 100px - 50px);
-          min-width: calc(400px + 200px - 50px); } }
-      @media (max-width: 768px) {
-        .site .site__header .header__support-element {
-          top: -25px;
-          left: -25px;
-          width: calc(100% - 100px - 100px);
-          min-width: calc(400px + 50px + 12px);
-          height: calc(100px + 25px);
-          border-radius: calc(50px + 12px);
-          margin-left: 100px; } }
-      @media (max-width: 576px) {
-        .site .site__header .header__support-element {
-          top: -25px;
-          left: -100px;
-          width: calc(100% - 2 * 25px);
-          min-width: unset;
-          border-radius: 0 calc(50px + 12px) calc(50px + 12px) 0; } }
-      @media (max-width: 480px) {
-        .site .site__header .header__support-element {
-          top: -12px;
-          height: calc(50px + 25px);
-          border-radius: 0 calc(25px + 12px) calc(25px + 12px) 0; } }
+      border-radius: 0 9999px 9999px 0; }
     .site .site__header .header__main-banner {
       position: relative;
       z-index: 2;
       display: flex;
       align-items: center;
-      height: 200px;
-      width: calc(100% - 400px);
-      max-width: calc(800px + 400px);
-      min-width: calc(800px + 100px);
+      height: clamp(75px, 16vw, 200px);
+      width: clamp(310px, 85vw, 1200px);
       background-color: #59729A;
-      border-radius: 0 100px 100px 0;
-      margin: 100px auto 100px 0; }
-      @media (max-width: 992px) {
-        .site .site__header .header__main-banner {
-          width: calc(100% - 100px);
-          min-width: calc(400px + 200px); } }
-      @media (max-width: 768px) {
-        .site .site__header .header__main-banner {
-          width: calc(100% - 100px - 100px);
-          min-width: calc(400px + 50px + 12px);
-          height: calc(100px + 25px);
-          border-radius: calc(50px + 12px);
-          margin-left: 100px;
-          margin-bottom: 100px;
-          margin-top: 50px; } }
-      @media (max-width: 576px) {
-        .site .site__header .header__main-banner {
-          margin-left: 0;
-          margin-bottom: 100px;
-          width: calc(100% - 25px);
-          min-width: unset;
-          border-radius: 0 calc(50px + 12px) calc(50px + 12px) 0; } }
-      @media (max-width: 480px) {
-        .site .site__header .header__main-banner {
-          height: calc(50px + 25px);
-          border-radius: 0 calc(25px + 12px) calc(25px + 12px) 0; } }
-      @media (max-width: 360px) {
-        .site .site__header .header__main-banner {
-          width: calc(100% - 12px); } }
+      border-radius: 0 9999px 9999px 0;
+      margin: clamp(50px, 7vw, 100px) auto 100px 0; }
       .site .site__header .header__main-banner .main-banner__content {
         display: flex;
         padding-left: calc(200px + 4 * 25px);
@@ -116,53 +60,19 @@ body {
             padding-left: calc(50px); } }
         .site .site__header .header__main-banner .main-banner__content .main-banner__image {
           position: absolute;
-          top: -25px;
-          left: 25px;
+          top: clamp(-25px, calc(50px - 6vw), 50px);
+          left: clamp(-25px, calc(-35px + 5vw), 25px);
           border-radius: 50%;
-          height: calc(200px + 2 * 25px);
-          width: calc(200px + 2 * 25px); }
-          @media (max-width: 992px) {
-            .site .site__header .header__main-banner .main-banner__content .main-banner__image {
-              top: -12px;
-              left: 12px;
-              height: calc(200px + 2 * 12px);
-              width: calc(200px + 2 * 12px); } }
-          @media (max-width: 768px) {
-            .site .site__header .header__main-banner .main-banner__content .main-banner__image {
-              top: 50px;
-              left: calc(12px - 100px);
-              height: calc(100px + 50px);
-              width: calc(100px + 50px); } }
-          @media (max-width: 576px) {
-            .site .site__header .header__main-banner .main-banner__content .main-banner__image {
-              top: 50px;
-              left: -25px; } }
-          @media (max-width: 480px) {
-            .site .site__header .header__main-banner .main-banner__content .main-banner__image {
-              height: 100px;
-              width: 100px;
-              left: -12px;
-              top: calc(50px - 6px); } }
+          height: clamp(100px, 20vw, 250px);
+          width: clamp(100px, 20vw, 250px); }
         .site .site__header .header__main-banner .main-banner__content .main-banner__text .main-banner__title {
-          font-size: 44px;
-          color: #F5F5F5;
-          font-weight: normal; }
-          @media (max-width: 992px) {
-            .site .site__header .header__main-banner .main-banner__content .main-banner__text .main-banner__title {
-              font-size: 32px;
-              font-weight: bold; } }
-          @media (max-width: 768px) {
-            .site .site__header .header__main-banner .main-banner__content .main-banner__text .main-banner__title {
-              font-size: 24px; } }
-          @media (max-width: 480px) {
-            .site .site__header .header__main-banner .main-banner__content .main-banner__text .main-banner__title {
-              font-size: 18px; } }
+          font-size: clamp(18px, calc(max(4vw,2vh)), 44px);
+          color: #F5F5F5; }
         .site .site__header .header__main-banner .main-banner__content .main-banner__text .main-banner__subtitle {
-          color: #E3A94D;
-          font-weight: normal; }
+          font-size: clamp(16px, calc(max(3vw,1.5vh)), 32px);
+          color: #E3A94D; }
           @media (max-width: 768px) {
             .site .site__header .header__main-banner .main-banner__content .main-banner__text .main-banner__subtitle {
-              font-size: 24px;
               margin-left: 12px; } }
           @media (max-width: 768px) {
             .site .site__header .header__main-banner .main-banner__content .main-banner__text .main-banner__subtitle {
@@ -172,7 +82,6 @@ body {
               margin-left: 50px; } }
           @media (max-width: 480px) {
             .site .site__header .header__main-banner .main-banner__content .main-banner__text .main-banner__subtitle {
-              font-size: 16px;
               margin-left: 25px; } }
           @media (max-width: 360px) {
             .site .site__header .header__main-banner .main-banner__content .main-banner__text .main-banner__subtitle {
@@ -564,4 +473,5 @@ body {
       .site .site__footer .footer__privacy-link:hover {
         text-decoration: underline; }
     .site .site__footer .footer__text {
-      font-size: clamp(16px, 3vw, 24px); }
+      font-size: clamp(16px, 3vw, 24px);
+      color: #F5F5F5; }
