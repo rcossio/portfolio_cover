@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Flexbox Cards</title>
+    <style>
+        .projects-banner__cards {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .projects-banner__card {
+            display: flex;
+            flex-wrap: wrap;
+            background-color: #f0f0f0;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            flex: 1 1 400px;
+        }
+
+        .card__text-content {
+            flex: 1 1 200px;
+            margin-right: 20px;
+        }
+
+        .card__image {
+            flex: 1 1 100px;
+            background-color: #ccc;
+            width: 100px;
+            height: 100px;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="projects-banner__cards">
+        <div class="projects-banner__card">
+            <div class="card__text-content">
+                <!-- Text content goes here -->
+                <p>Card 1 text content. This can be any HTML content, such as paragraphs, headings, etc.</p>
+            </div>
+            <div class="card__image">
+                <!-- Image content goes here -->
+            </div>
+        </div>
+        <div class="projects-banner__card">
+            <div class="card__text-content">
+                <!-- Text content goes here -->
+                <p>Card 2 text content. This can be any HTML content, such as paragraphs, headings, etc.</p>
+            </div>
+            <div class="card__image">
+                <!-- Image content goes here -->
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+
